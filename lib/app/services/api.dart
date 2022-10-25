@@ -14,10 +14,10 @@ class API {
 
   factory API.sandbox() => API(apiKey: APIKeys.ncovSandboxKey);
 
-  static const String host = 'https://ncov2019-admin.firebaseapp.com';
+  static const String host = 'ncov2019-admin.firebaseapp.com';
 
   Uri tokenUri() => Uri(
-        scheme: 'http',
+        scheme: 'https',
         host: host,
         path: 'token',
       );

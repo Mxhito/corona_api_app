@@ -20,7 +20,7 @@ class APIService {
       }
     }
     print(
-        'Request ${api.tokenUri()} failed\nRessponse: ${responce.statusCode} ${responce.reasonPhrase}');
+        'Request ${api.tokenUri()} failed\nResponse: ${responce.statusCode} ${responce.reasonPhrase}');
     throw responce;
   }
 
@@ -43,7 +43,7 @@ class APIService {
       }
     }
     print(
-        'Request ${api.tokenUri()} failed\nRessponse: ${responce.statusCode} ${responce.reasonPhrase}');
+        'Request ${api.tokenUri()} failed\nResponse: ${responce.statusCode} ${responce.reasonPhrase}');
     throw responce;
   }
 
