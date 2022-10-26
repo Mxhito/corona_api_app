@@ -3,19 +3,21 @@ import 'package:corona_api_app/app/services/api.dart';
 import 'package:corona_api_app/app/services/api_service.dart';
 import 'package:http/http.dart';
 
+import '../services/endpoint_data.dart';
+
 class DataRepository {
   DataRepository({required this.apiService});
   final APIService apiService;
 
   late String _accessToken;
 
-  Future<int> getEndpointData(Endpoint endpoint) async =>
-      await _getDataRefreshingToken<int>(
+  Future<EndpointData> getEndpointData(Endpoint endpoint) async =>
+      await _getDataRefreshingToken<EndpointData>(
         onGetData: () => apiService.getEndpointData(
             accessToken: _accessToken, endpoint: endpoint),
       );
 
-  Future<EndpointsData> getAllEndpointData(Endpoint endpoint) async =>
+  Future<EndpointsData> getAllEndpointData() async =>
       await _getDataRefreshingToken<EndpointsData>(
           onGetData: _getAllEndpointsData);
 

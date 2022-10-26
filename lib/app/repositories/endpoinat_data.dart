@@ -1,13 +1,15 @@
 import 'package:corona_api_app/app/services/api.dart';
 
+import '../services/endpoint_data.dart';
+
 class EndpointsData {
   EndpointsData({required this.values});
-  final Map<Endpoint, int> values;
-  int? get cases => values[Endpoint.cases];
-  int? get casesSuspected => values[Endpoint.cases];
-  int? get casesConfirmed => values[Endpoint.cases];
-  int? get deaths => values[Endpoint.cases];
-  int? get recovered => values[Endpoint.cases];
+  final Map<Endpoint, EndpointData> values;
+  EndpointData? get cases => values[Endpoint.cases];
+  EndpointData? get casesSuspected => values[Endpoint.cases];
+  EndpointData? get casesConfirmed => values[Endpoint.cases];
+  EndpointData? get deaths => values[Endpoint.cases];
+  EndpointData? get recovered => values[Endpoint.cases];
 
   @override
   String toString() =>

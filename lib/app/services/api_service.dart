@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'api.dart';
+import 'endpoint_data.dart';
 
 class APIService {
   APIService(this.api);
@@ -24,7 +25,7 @@ class APIService {
     throw responce;
   }
 
-  Future<int> getEndpointData({
+  Future<EndpointData> getEndpointData({
     required String accessToken,
     required Endpoint endpoint,
   }) async {
@@ -35,10 +36,12 @@ class APIService {
       final List<dynamic> data = jsonDecode(responce.body);
       if (data.isNotEmpty) {
         final Map<String, dynamic> endpointData = data[0];
-        final String? responseJsonKey = _responseJsonKey[endpoint];
-        final int? result = endpointData[responseJsonKey];
-        if (result != null) {
-          return result;
+        final String responseJsonKey = _responseJsonKey[endpoint] ?? '';
+        final int? value = endpointData[responseJsonKey];
+        final String dateString = endpointData['date'];
+        final date = DateTime.tryParse(dateString);
+        if (value != null) {
+          return EndpointData(value: value, date: date);
         }
       }
     }
