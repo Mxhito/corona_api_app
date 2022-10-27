@@ -37,12 +37,10 @@ class APIService {
       if (data.isNotEmpty) {
         final Map<String, dynamic> endpointData = data[0];
         final String responseJsonKey = _responseJsonKey[endpoint] ?? '';
-        final int? value = endpointData[responseJsonKey];
+        final int value = endpointData[responseJsonKey];
         final String dateString = endpointData['date'];
         final date = DateTime.tryParse(dateString);
-        if (value != null) {
-          return EndpointData(value: value, date: date);
-        }
+        return EndpointData(value: value, date: date);
       }
     }
     print(

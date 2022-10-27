@@ -34,10 +34,6 @@ class EndpointCard extends StatelessWidget {
   };
 
   String get formattedValues {
-    if (value == null) {
-      return '';
-    }
-
     return NumberFormat('#,###,###,###').format(value);
   }
 
