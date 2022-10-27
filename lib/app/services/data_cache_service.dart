@@ -14,10 +14,12 @@ class DataCacheService {
   EndpointsData getData() {
     Map<Endpoint, EndpointData> values = {};
     for (var endpoint in Endpoint.values) {
-      final value = sharedPreferences.getInt(endpointValueKey(endpoint));
+      // final value = sharedPreferences.getInt(endpointValueKey(endpoint));
       final dateString = sharedPreferences.getString(endpointDateKey(endpoint));
       final date = DateTime.tryParse(dateString ?? '');
-      values[endpoint] = EndpointData(value: value ?? 0, date: date);
+      values[endpoint] = EndpointData(
+          value: sharedPreferences.getInt(endpointValueKey(endpoint)) ?? 0,
+          date: date);
     }
     return EndpointsData(values: values);
   }
