@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:corona_api_app/app/repositories/data_repository.dart';
-import 'package:corona_api_app/app/repositories/endpoinat_data.dart';
+import 'package:corona_api_app/app/repositories/endpoint_data.dart';
 import 'package:corona_api_app/app/services/api.dart';
 import 'package:corona_api_app/app/ui/last_updated_status_text.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +56,8 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     final formatter = LastUpdatedDateFormatter(
-        lastUpdated: _endpointsData.values[Endpoint.cases]?.date);
+      lastUpdated: _endpointsData.values[Endpoint.cases]?.date,
+    );
     return Scaffold(
       appBar: AppBar(
         title: const Text('Coronavirus Tracker'),

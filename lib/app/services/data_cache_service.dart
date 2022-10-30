@@ -1,4 +1,4 @@
-import 'package:corona_api_app/app/repositories/endpoinat_data.dart';
+import 'package:corona_api_app/app/repositories/endpoint_data.dart';
 import 'package:corona_api_app/app/services/api.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

@@ -1,4 +1,4 @@
-import 'package:corona_api_app/app/repositories/endpoinat_data.dart';
+import 'package:corona_api_app/app/repositories/endpoint_data.dart';
 import 'package:corona_api_app/app/services/api.dart';
 import 'package:corona_api_app/app/services/api_service.dart';
 import 'package:corona_api_app/app/services/data_cache_service.dart';
